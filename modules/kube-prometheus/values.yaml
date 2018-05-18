@@ -3,6 +3,13 @@ deployExporterNode: True
 deployGrafana: True
 deployAlertManager: True
 
+grafana:
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      ingress.kubernetes.io/ssl-redirect: "true"
+
+
 ## If true, create & use RBAC resources resp. Pod Security Policies
 ###
 global:
@@ -48,9 +55,9 @@ alertmanager:
 
     ## Annotations for Alertmanager Ingress
     ##
-    annotations: {}
-      # kubernetes.io/ingress.class: nginx
-      # kubernetes.io/tls-acme: "true"
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      ingress.kubernetes.io/ssl-redirect: "true"
 
     ## Labels to be added to the Ingress
     ##
@@ -183,9 +190,9 @@ prometheus:
 
     ## Annotations for Prometheus Ingress
     ##
-    annotations: {}
-      # kubernetes.io/ingress.class: nginx
-      # kubernetes.io/tls-acme: "true"
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      ingress.kubernetes.io/ssl-redirect: "true"
 
     ## Labels to be added to the Ingress
     ##
