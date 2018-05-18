@@ -1,0 +1,34 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: apps-ingress-tls
+  namespace: default
+spec:
+  secretName: apps-ingress-tls
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt
+  dnsNames:
+  - dev.forms-app.apps.exekube.us
+  - dev.guestbook.apps.exekube.us
+  - dev.railsgoat.apps.exekube.us
+  - dev.app1.apps.exekube.us
+  - dev.app2.apps.exekube.us
+  - dev.app3.apps.exekube.us
+  - dev.app4.apps.exekube.us
+  - dev.app5.apps.exekube.us
+  - dev.app6.apps.exekube.us
+  acme:
+    config:
+    - http01:
+        ingress: apps-ingress
+      domains:
+      - dev.forms-app.apps.exekube.us
+      - dev.guestbook.apps.exekube.us
+      - dev.railsgoat.apps.exekube.us
+      - dev.app1.apps.exekube.us
+      - dev.app2.apps.exekube.us
+      - dev.app3.apps.exekube.us
+      - dev.app4.apps.exekube.us
+      - dev.app5.apps.exekube.us
+      - dev.app6.apps.exekube.us

@@ -1,0 +1,4 @@
+.config/
+.hide/
+live/*/**/owner.json
+live/*/*secrets/**

@@ -1,0 +1,2 @@
+# Release values
+bucket: ${project_id}-ark

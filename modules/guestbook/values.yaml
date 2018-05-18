@@ -1,0 +1,13 @@
+# Default values
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/ssl-redirect: "true"
+
+  hosts:
+    - ${domain_name}
+  tls:
+    - secretName: apps-ingress-tls
+      hosts:
+        - ${domain_name}
