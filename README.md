@@ -2,15 +2,26 @@
 
 This is an Exekube project used as an incubator
 
-## Railsgoat Database Backup
+## Manual persistent volume snapshots via railsgoat-restore chart
 
-- Backup from running disk:
+- Create snapshot from disk:
+    ```sh
+    xk bash
+    ```
+    ```sh
+    export DISK_NAME=<GCE-PD-NAME>
+    ```
     ```sh
     gcloud compute disks \
-    snapshot <AUTOMATICALLY-CREATED-DISK-ID> \
-    --snapshot-name railsgoat-snapshot-1
+    snapshot $DISK_NAME \
+    --zone europe-west1-d \
+    --snapshot-names railsgoat-snapshot-1
     ```
-- Restore:
+- Simulate disaster:
+    ```sh
+    xk down live/dev/k8s/default/railsgoat/
+    ```
+- Create disk from snapshot:
     ```sh
     gcloud compute disks create \
     railsgoat-data-1 \
@@ -18,8 +29,18 @@ This is an Exekube project used as an incubator
     --zone=europe-west1-d \
     --type=pd-standard
     ```
-- Use in `modules/railsgoat/values.yaml`:
+- Enable `railsgoat-restore` chart and use `existingClaim` for `postgresql` chart (in `modules/railsgoat/values.yaml`):
     ```yaml
-    railsgoat-db:
+    railsgoat-restore:
+      enabled: true
       gcePdName: railsgoat-data-1
+    ```
+    ```diff
+    ## Configuration values for the postgresql dependency.
+    ## ref: https://github.com/kubernetes/charts/blob/master/stable/postgresql/README.md
+    ##
+    +postgresql:
+    +  persistence:
+    +    enabled: true
+    +    existingClaim: railsgoat-db
     ```

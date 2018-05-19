@@ -2,9 +2,9 @@ terraform {
   backend "gcs" {}
 }
 
-variable "project_id" {}
-variable "secrets_dir" {}
-
+# variable "project_id" {}
+# variable "secrets_dir" {}
+#
 # module "ark" {
 #   source = "/exekube-modules/helm-template-release"
 #
@@ -24,8 +24,7 @@ variable "secrets_dir" {}
 # EOF
 #   }
 # }
-
-
+#
 # resource "null_resource" "data_backup" {
 #   provisioner "local-exec" {
 #     command = <<EOF
@@ -33,6 +32,15 @@ variable "secrets_dir" {}
 # --schedule="*/30 * * * *" \
 # --snapshot-volumes=true \
 # --include-resources=pvcs,pvs
+# EOF
+#   }
+# }
+#
+# resource "null_resource" "data_backup" {
+#   provisioner "local-exec" {
+#     command = <<EOF
+# ark backup create volume-backup \
+# --include-resources pvs
 # EOF
 #   }
 # }

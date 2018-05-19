@@ -2,5 +2,5 @@ dependencies:
   - name: postgresql
     version: 0.8.4
 
-  - name: railsgoat-db
+  - name: railsgoat-restore
     version: 0.1.0

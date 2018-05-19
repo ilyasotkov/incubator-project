@@ -11,6 +11,18 @@ image:
 serviceType: ClusterIP
 servicePort: 3000
 
+## Configuration values for the postgresql dependency.
+## ref: https://github.com/kubernetes/charts/blob/master/stable/postgresql/README.md
+##
+# postgresql:
+#   persistence:
+#     enabled: true
+#     existingClaim: railsgoat-db
+
+railsgoat-restore:
+  enabled: false
+  gcePdName: railsgoat-data-1
+
 resources:
   limits:
     cpu: 100m
@@ -18,18 +30,6 @@ resources:
   requests:
     cpu: 100m
     memory: 128Mi
-
-## Configuration values for the postgresql dependency.
-## ref: https://github.com/kubernetes/charts/blob/master/stable/postgresql/README.md
-##
-postgresql:
-  persistence:
-    enabled: true
-    storageClass: "-"
-    existingClaim: railsgoat-db
-
-railsgoat-db:
-  gcePdName: railsgoat-data
 
 ingress:
   enabled: true
