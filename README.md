@@ -4,11 +4,11 @@ This is an Exekube project used as an incubator
 
 ## Railsgoat Database Backup
 
-- Backup:
+- Backup from running disk:
     ```sh
     gcloud compute disks \
-    snapshot railsgoat-data-1 \
-    --snapshot-name railsgoat-snapshot-0
+    snapshot <AUTOMATICALLY-CREATED-DISK-ID> \
+    --snapshot-name railsgoat-snapshot-1
     ```
 - Restore:
     ```sh
