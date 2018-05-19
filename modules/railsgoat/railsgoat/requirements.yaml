@@ -1,4 +1,6 @@
 dependencies:
   - name: postgresql
     version: 0.8.4
-    # repository: file://../postgresql
+
+  - name: railsgoat-db
+    version: 0.1.0

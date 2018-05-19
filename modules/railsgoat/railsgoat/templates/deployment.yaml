@@ -74,6 +74,6 @@ spec:
             periodSeconds: 5
           workingDir: /myapp
           command: ["bash", "-c"]
-          args: ["rails db:migrate 2>/dev/null || rake db:setup && bundle exec puma -C config/puma.rb"]
+          args: ["rails db:migrate && bundle exec puma -C config/puma.rb"]
           resources:
 {{ toYaml .Values.resources | indent 12 }}

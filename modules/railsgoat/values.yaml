@@ -25,8 +25,11 @@ resources:
 postgresql:
   persistence:
     enabled: true
-  postgresUser: postgres
-  postgresPassword: postgres
+    storageClass: "-"
+    existingClaim: railsgoat-db
+
+railsgoat-db:
+  gcePdName: railsgoat-data
 
 ingress:
   enabled: true
