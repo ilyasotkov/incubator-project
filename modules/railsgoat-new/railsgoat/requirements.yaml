@@ -1,0 +1,15 @@
+dependencies:
+- name: postgresql
+  version: 0.12.0
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  condition: postgresql.enabled
+
+- name: gcloud-sqlproxy
+  version: 0.4.0
+  repository: https://exekube.github.io/charts/
+  condition: gcloud-sqlproxy.enabled
+
+- name: pd-pvc
+  version: 0.1.0
+  repository: https://exekube.github.io/charts/
+  condition: pd-pvc.enabled

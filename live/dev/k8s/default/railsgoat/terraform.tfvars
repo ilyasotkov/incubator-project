@@ -2,7 +2,7 @@
 
 terragrunt = {
   terraform {
-    source = "/project/modules//railsgoat"
+    source = "/project/modules//railsgoat-new"
   }
 
   dependencies {
