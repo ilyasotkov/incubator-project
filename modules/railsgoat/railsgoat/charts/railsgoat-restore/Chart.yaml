@@ -1,4 +1,0 @@
-apiVersion: v1
-description: Restore PV and PVC from GCE PD for our railsgoat app
-name: railsgoat-restore
-version: 0.1.0
