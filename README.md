@@ -22,4 +22,6 @@ This is an Exekube project used as an incubator
 
 ### snapshot-controller module and chart
 
+> http://people.redhat.com/jrivera/openshift-docs_preview/openshift-origin/glusterfs-review/install_config/persistent_storage/persistent_volume_snapshots.html
+
 `snapshot-controller` adds CRD `kind: VolumeSnapshot` via [kubernetes-incubator/external-storage](https://github.com/kubernetes-incubator/external-storage)

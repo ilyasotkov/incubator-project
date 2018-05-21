@@ -1,0 +1,15 @@
+# LIMITATION: ORIGINAL PV AND PVC MUST EXIST PRIOR TO RESTORATION
+# GitHub Issue: https://github.com/kubernetes-incubator/external-storage/issues/705
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: snapshot-pv-provisioning-demo
+  annotations:
+    snapshot.alpha.kubernetes.io/snapshot: snapshot-demo
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: snapshot-promoter
+  resources:
+    requests:
+      storage: 8Gi
