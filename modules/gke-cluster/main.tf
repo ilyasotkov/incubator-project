@@ -11,7 +11,7 @@ module "gke_cluster" {
   serviceaccount_key = "${var.serviceaccount_key}"
 
   initial_node_count = 2
-  node_type          = "n1-standard-4"
+  node_type          = "n1-standard-2"
   kubernetes_version = "1.9.6-gke.1"
 
   main_compute_zone = "europe-west1-d"

@@ -1,14 +1,14 @@
 # List namespaces to create
 namespaces:
+  - name: monitoring
+    secure: false
+    labels:
+      name: monitoring
   - name: heptio-ark
     secure: false
     labels:
       name: heptio-ark
       app: ark
-  - name: monitoring
-    secure: false
-    labels:
-      name: monitoring
 
 # Assign users as cluster-admins
 clusterAdmins:
@@ -21,7 +21,7 @@ clusterAdmins:
 dashboardPermissions:
   create: true
   clusterRoles:
-    - view
+    # - view
     # - secret-lister
     # - cluster-object-viewer
     - cluster-admin

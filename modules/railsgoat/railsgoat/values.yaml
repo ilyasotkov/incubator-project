@@ -52,3 +52,16 @@ postgresql:
     # size: 8Gi
   postgresUser: railsgoat
   postgresPassword: railsgoat
+
+gcloud-sqlproxy:
+  enabled: false
+  serviceAccountKey:
+    create: true
+    key: |
+      <PUT_JSON_KEY_HERE>
+  cloudsql:
+    instances:
+    - instance: "my-instance"
+      project: "my-project"
+      region: "europe-west1"
+      port: 5432

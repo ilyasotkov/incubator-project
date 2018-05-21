@@ -7,19 +7,6 @@ image:
 
 serviceType: ClusterIP
 servicePort: 3000
-
-# postgresql:
-#   persistence:
-#     enabled: true
-#     existingClaim: railsgoat-data
-#
-# pd-pvc:
-#   enabled: true
-#   # Name of a GCE PD to create PV from
-#   gcePdName: "railsgoat-postgresql-data"
-#   # Name of PVC that will be created, use it in postgresql.persistence.existingClaim
-#   pvcName: railsgoat-data
-
 ingress:
   enabled: true
   annotations:
@@ -31,3 +18,26 @@ ingress:
     - secretName: apps-ingress-tls
       hosts:
         - ${domain_name}
+
+# gcloud-sqlproxy:
+#   enabled: true
+#   serviceAccountKey:
+#     create: false
+#   cloudsql:
+#     instances:
+#     - instance: "master-instance"
+#       project: "dev-demo-apps-296e23"
+#       region: "europe-west1"
+#       port: 5432
+
+postgresql:
+  persistence:
+    enabled: true
+    existingClaim: railsgoat-data
+
+pd-pvc:
+  enabled: true
+  # Name of a GCE PD to create PV from
+  gcePdName: "railsgoat-postgresql-data"
+  # Name of PVC that will be created, use it in postgresql.persistence.existingClaim
+  pvcName: railsgoat-data

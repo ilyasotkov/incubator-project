@@ -31,26 +31,40 @@ spec:
           env:
             - name: PORT
               value: "3000"
-            # - name: DISABLE_DATABASE_ENVIRONMENT_CHECK
-            #   value: "0"
             - name: RAILS_ENV
               value: production
             - name: RAILS_SERVE_STATIC_FILES
               value: "yes"
             - name: RAILS_LOG_TO_STDOUT
               value: "yes"
+            {{- if index .Values "gcloud-sqlproxy" "enabled" }}
+            - name: POSTGRES_HOST
+              value: {{ template "railsgoat.gcloud-sqlproxy.fullname" . }}
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: cloudsql-db-credentials
+                  key: db-username
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: cloudsql-db-credentials
+                  key: db-password
+            {{- end }}
+            {{- if .Values.postgresql.persistence.enabled }}
             - name: POSTGRES_HOST
               value: {{ template "railsgoat.postgresql.fullname" . }}
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
                   name: {{ template "railsgoat.fullname" . }}
-                  key: db-user
+                  key: db-username
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: {{ template "railsgoat.fullname" . }}
                   key: db-password
+            {{- end }}
             - name: KEY
               valueFrom:
                 secretKeyRef:
