@@ -2,11 +2,11 @@ dependencies:
 - name: postgresql
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 0.12.0
-- name: gcloud-sqlproxy
-  repository: https://exekube.github.io/charts/
-  version: 0.4.0
 - name: pd-pvc
   repository: https://exekube.github.io/charts/
   version: 0.1.0
-digest: sha256:73a064d69381072cc837e4c4c8f5693bef6133e8a199ac179e2fbc98a4d58117
-generated: 2018-05-20T22:38:01.842318+03:00
+- name: gcloud-sqlproxy
+  repository: https://exekube.github.io/charts/
+  version: 0.4.0
+digest: sha256:ef90fbbe3bc5b8330ee8556c976683d8e9ab3a8a633b55ec1e10ba69e02b1549
+generated: 2018-05-21T07:06:12.650981+03:00
