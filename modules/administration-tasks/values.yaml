@@ -4,11 +4,11 @@ namespaces:
     secure: false
     labels:
       name: monitoring
-  - name: heptio-ark
+  - name: sparkoperator
     secure: false
     labels:
-      name: heptio-ark
-      app: ark
+      name: sparkoperator
+      app: sparkoperator
 
 # Assign users as cluster-admins
 clusterAdmins:
