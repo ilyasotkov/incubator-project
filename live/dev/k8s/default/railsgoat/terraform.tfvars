@@ -18,4 +18,4 @@ terragrunt = {
 
 # ↓ Module configuration (empty means all default)
 
-domain_name = "dev.railsgoat.apps.exekube.us"
+domain_name = "railsgoat.dev.apps.exekube.us"

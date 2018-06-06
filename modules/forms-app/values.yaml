@@ -6,7 +6,7 @@ resources: {}
 
 image:
   repository: ilyasotkov/forms-app
-  tag: latest
+  tag: 0.3.2
   pullPolicy: IfNotPresent
 
 serviceType: ClusterIP

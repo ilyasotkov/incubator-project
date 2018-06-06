@@ -16,5 +16,5 @@
 #   }
 # }
 #
-# domain_name = "dev.app2.apps.exekube.us"
+# domain_name = "gogs.dev.apps.exekube.us"
 

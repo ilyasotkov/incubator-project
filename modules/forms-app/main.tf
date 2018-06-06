@@ -12,9 +12,11 @@ module "forms_app" {
 
   release_name      = "forms-app"
   release_namespace = "default"
-  domain_name       = "${var.domain_name}"
+  extra_values      = "values-env.yaml"
 
   chart_repo    = "exekube"
   chart_name    = "nginx-react"
   chart_version = "0.2.1"
+
+  domain_name = "${var.domain_name}"
 }

@@ -2,28 +2,28 @@ grafana:
   ingress:
     enabled: true
     hosts:
-      - dev.app1.apps.exekube.us
+      - grafana.dev.apps.exekube.us
     tls:
       - secretName: apps-ingress-tls
         hosts:
-          - dev.app1.apps.exekube.us
+          - grafana.dev.apps.exekube.us
 
 altertmanager:
   ingress:
     enabled: true
     hosts:
-      - dev.app3.apps.exekube.us
+      - altertmanager.dev.apps.exekube.us
     tls:
       - secretName: apps-ingress-tls
         hosts:
-          - dev.app3.apps.exekube.us
+          - altertmanager.dev.apps.exekube.us
 
 prometheus:
   ingress:
     enabled: true
     hosts:
-      - dev.app4.apps.exekube.us
+      - prometheus.dev.apps.exekube.us
     tls:
       - secretName: apps-ingress-tls
         hosts:
-          - dev.app4.apps.exekube.us
+          - prometheus.dev.apps.exekube.us

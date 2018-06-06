@@ -16,5 +16,5 @@
 #   }
 # }
 #
-# domain_name = "dev.app1.apps.exekube.us"
+# domain_name = "concourse.dev.apps.exekube.us"
 

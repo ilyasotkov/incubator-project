@@ -11,10 +11,7 @@ module "kube_prometheus" {
   tiller_namespace = "kube-system"
   client_auth      = "${var.secrets_dir}/kube-system/helm-tls"
 
-  release_name   = "kp"
-  release_values = "values.yaml"
-  extra_values   = "env.yaml"
-
+  release_name      = "kp"
   release_namespace = "monitoring"
 
   chart_repo    = "coreos"

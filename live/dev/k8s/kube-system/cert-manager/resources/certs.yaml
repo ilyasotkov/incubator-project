@@ -9,26 +9,10 @@ spec:
     kind: ClusterIssuer
     name: letsencrypt
   dnsNames:
-  - dev.forms-app.apps.exekube.us
-  - dev.guestbook.apps.exekube.us
-  - dev.railsgoat.apps.exekube.us
-  - dev.app1.apps.exekube.us
-  - dev.app2.apps.exekube.us
-  - dev.app3.apps.exekube.us
-  - dev.app4.apps.exekube.us
-  - dev.app5.apps.exekube.us
-  - dev.app6.apps.exekube.us
+    - "*.dev.apps.exekube.us"
   acme:
     config:
-    - http01:
-        ingress: apps-ingress
+    - dns01:
+        provider: cert-manager-clouddns
       domains:
-      - dev.forms-app.apps.exekube.us
-      - dev.guestbook.apps.exekube.us
-      - dev.railsgoat.apps.exekube.us
-      - dev.app1.apps.exekube.us
-      - dev.app2.apps.exekube.us
-      - dev.app3.apps.exekube.us
-      - dev.app4.apps.exekube.us
-      - dev.app5.apps.exekube.us
-      - dev.app6.apps.exekube.us
+        - "*.dev.apps.exekube.us"
