@@ -12,7 +12,7 @@ module "gke_cluster" {
 
   initial_node_count      = 3
   node_type               = "n1-standard-2"
-  kubernetes_version      = "1.9.6-gke.1"
+  kubernetes_version      = "1.9.7-gke.1"
   enable_kubernetes_alpha = "true"
 
   main_compute_zone = "europe-west1-d"
