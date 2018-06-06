@@ -18,7 +18,7 @@ variable "secrets_dir" {}
 # }
 
 resource "null_resource" "cert_manager_resources" {
-  depends_on = ["module.cert_manager"]
+  # depends_on = ["module.cert_manager"]
 
   provisioner "local-exec" {
     # command = "kubectl apply -f ${path.module}/resources/"
