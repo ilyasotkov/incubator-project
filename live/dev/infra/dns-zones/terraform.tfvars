@@ -2,13 +2,7 @@
 
 terragrunt = {
   terraform {
-    source = "/project/modules//guestbook"
-  }
-
-  dependencies {
-    paths = [
-      "../../kube-system/cert-manager",
-    ]
+    source = "/project/modules//dns-zones"
   }
 
   include = {
@@ -18,4 +12,3 @@ terragrunt = {
 
 # ↓ Module configuration (empty means all default)
 
-domain_name = "guestbook.auto-dns.exekube.us"

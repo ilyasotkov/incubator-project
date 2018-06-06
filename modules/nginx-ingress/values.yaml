@@ -8,6 +8,8 @@ controller:
     minReplicas: 1
     maxReplicas: 3
     targetCPUUtilizationPercentage: 50
+  publishService:
+    enabled: true
 
 rbac:
   create: true
