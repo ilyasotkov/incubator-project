@@ -15,9 +15,11 @@ terragrunt = {
 # create_static_ip_address = false
 
 dns_zones = {
-  apps-exekube-us = "apps.exekube.us."
+  myapps-exekube-us = "apps.exekube.us."
+  istio-exekube-us  = "istio.exekube.us."
 }
 
 dns_records = {
-  apps-exekube-us = "*.apps.exekube.us."
+  istio-exekube-us  = "*.istio.exekube.us."
+  myapps-exekube-us = "*.apps.exekube.us."
 }
